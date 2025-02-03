@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miss Selfie Queen 2025</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center">
+      <div class="container text-center text-lg-start">
+        <div class="row align-items-center">
+          <!-- Left Side: Text Content -->
+          <div class="col-lg-6">
+            <h1 class="display-1 fw-bold text-uppercase explode-text">
+              Miss <span class="text-warning">Selfie</span> Queen 2025!
+            </h1>
+            <p class="lead mt-3 fst-italic text-light">
+              📸 The most glamorous selfie competition is here!
+            </p>
+            <p class="fs-3 fw-bold text-light">
+              <i class="bi bi-stars text-warning"></i> WIN ₹50,000 + iPhone 15 +
+              Exclusive Kit!
+            </p>
+            <a
+              href="YOUR_GOOGLE_FORM_LINK"
+              class="btn btn-lg btn-gold shadow-lg mt-4"
+            >
+              <i class="bi bi-camera-fill"></i> Submit Your Selfie Now
+            </a>
+          </div>
+
+          <!-- Right Side: Explosive Graphics -->
+          <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <img
+              src="selfie-queen.png"
+              class="img-fluid hero-img"
+              alt="Selfie Queen"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Prizes Section -->
+    <section class="prizes-section py-5 text-center">
+      <div class="container">
+        <h2 class="display-4 fw-bold text-uppercase text-light prize-title">
+          🏆 Grand Prizes Await!
+        </h2>
+        <p class="lead text-light">Win big and claim your crown! 👑</p>
+
+        <!-- Fireworks Animation -->
+        <canvas id="fireworks"></canvas>
+
+        <div class="row mt-5">
+          <!-- 1st Prize -->
+          <div class="col-md-4">
+            <div class="prize-card gold-card" data-tilt>
+              <div class="gold-sparkles"></div>
+              <i class="fa-solid fa-crown text-warning trophy-glow"></i>
+              <h3 class="prize-rank">🥇 1st Place</h3>
+              <p class="prize-desc">
+                ₹<span class="counter" data-target="50000">0</span> +
+                <i class="fa-brands fa-apple"></i> iPhone 15 + Exclusive Kit
+              </p>
+            </div>
+          </div>
+
+          <!-- 2nd Prize -->
+          <div class="col-md-4">
+            <div class="prize-card silver-card" data-tilt>
+              <i class="fa-solid fa-medal text-secondary"></i>
+              <h3 class="prize-rank">🥈 2nd Place</h3>
+              <p class="prize-desc">
+                ₹<span class="counter" data-target="30000">0</span> +
+                <i class="fa-brands fa-android"></i> OnePlus Nord CE4 + Kit
+              </p>
+            </div>
+          </div>
+
+          <!-- 3rd Prize -->
+          <div class="col-md-4">
+            <div class="prize-card bronze-card" data-tilt>
+              <i class="fa-solid fa-award text-warning"></i>
+              <h3 class="prize-rank">🥉 3rd Place</h3>
+              <p class="prize-desc">
+                ₹<span class="counter" data-target="20000">0</span> +
+                <i class="fa-brands fa-android"></i> Samsung F55 + Kit
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Instagram Feed (Static, No Scrolling) -->
+        <div class="instagram-gallery mt-4">
+          <img src="selfie1.jpg" class="selfie-img" />
+          <img src="selfie2.jpg" class="selfie-img" />
+          <img src="selfie3.jpg" class="selfie-img" />
+        </div>
+      </div>
+
+      <!-- Floating Text -->
+      <div class="floating-text" style="top: 10%; left: 5%">🏆 WIN BIG!</div>
+      <div class="floating-text" style="top: 60%; left: 70%">
+        🔥 EXCLUSIVE REWARDS!
+      </div>
+    </section>
+
+    <!-- How to Participate Section -->
+    <!-- How to Participate Section -->
+    <section class="participate-section text-center py-5">
+      <div class="container">
+        <h2 class="display-4 fw-bold text-uppercase text-light">
+          🚀 How to Participate?
+        </h2>
+        <p class="lead text-light">
+          Follow these simple steps & become the next Selfie Queen! 👑
+        </p>
+
+        <div class="steps-container mt-5">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <i class="fa-solid fa-camera-retro floating-icon"></i>
+            <h3>Capture Your Best Selfie!</h3>
+            <p>📸 Show your confidence & style!</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <i class="fa-solid fa-file-signature floating-icon"></i>
+            <h3>Fill Out the Submission Form</h3>
+            <p>📝 Complete the form & upload your selfie.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <i class="fa-solid fa-share floating-icon"></i>
+            <h3>Share & Get Votes!</h3>
+            <p>📢 Tell your friends & gain support!</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <i class="fa-solid fa-trophy floating-icon"></i>
+            <h3>Win & Become a Star! ⭐</h3>
+            <p>🏆 Receive prizes, recognition & fame!</p>
+          </div>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="mt-5">
+          <a href="YOUR_GOOGLE_FORM_LINK" class="btn participate-btn">
+            <i class="fa-solid fa-upload"></i> Submit Your Selfie Now!
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section text-center py-5">
+      <div class="container">
+        <h2 class="display-4 fw-bold text-uppercase text-light">
+          ❓ Frequently Asked Questions
+        </h2>
+        <p class="lead text-light">Find answers to common questions below!</p>
+
+        <div class="accordion mt-5" id="faqAccordion">
+          <!-- Question 1 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                📸 How do I submit my selfie?
+              </button>
+            </h3>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Simply click the **"Submit Your Selfie Now"** button, fill out
+                the form, and upload your selfie!
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                🏆 How are the winners chosen?
+              </button>
+            </h3>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Winners are selected based on **votes and judges' scores** for
+                creativity and quality.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                📅 When is the deadline for submission?
+              </button>
+            </h3>
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                The deadline for submissions is **[Insert Date]**. Don't
+                wait—upload your selfie now!
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button
+                class="accordion-button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq4"
+              >
+                🆓 Does it cost anything to participate?
+              </button>
+            </h3>
+            <div
+              id="faq4"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                No, it's completely **FREE to participate**! Just submit your
+                selfie and join the fun.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FontAwesome Icons -->
+
+    <!-- Tilt.js for 3D Effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

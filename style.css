@@ -1,0 +1,501 @@
+/* Hero Section with Explosive Background */
+.hero-section {
+  height: 100vh;
+  background: radial-gradient(
+      circle,
+      rgba(255, 0, 0, 0.9) 30%,
+      rgba(200, 0, 0, 1) 100%
+    ),
+    url("your-background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+/* Explosive Big Text */
+.explode-text {
+  font-size: 4.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  animation: explode 2s ease-in-out infinite alternate;
+}
+
+/* Button Styling (Gold) */
+.btn-gold {
+  background-color: #ffd700;
+  color: #900000;
+  padding: 14px 32px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gold:hover {
+  background-color: #ffcc00;
+  color: #660000;
+  transform: scale(1.1);
+}
+
+/* Hero Image Floating Effect */
+.hero-img {
+  width: 80%;
+  max-width: 450px;
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+/* Keyframes for Floating Image */
+@keyframes floatImage {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Keyframes for Exploding Headline */
+@keyframes explode {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+/* Prizes Section Background */
+/* Prizes Section with High-Tech Effects */
+.prizes-section {
+  background: linear-gradient(135deg, #b30000 10%, #ff0000 90%);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Particles in the Background */
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("floating-particles.gif"); /* Use a cool animated particle effect */
+  opacity: 0.2;
+  animation: moveParticles 10s linear infinite alternate;
+}
+
+@keyframes moveParticles {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+}
+
+/* Title with Neon Glow */
+.prize-title {
+  text-shadow: 4px 4px 30px rgba(255, 255, 255, 0.5);
+}
+
+/* 3D Interactive Prize Cards */
+.prize-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 50px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.3rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 3D Hover Effect */
+.prize-card:hover {
+  transform: translateY(-12px) rotateY(4deg);
+  box-shadow: 0px 12px 40px rgba(255, 255, 255, 0.4);
+}
+
+/* Live Gold Sparkles on 1st Prize */
+.gold-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("gold-sparkles.gif"); /* Use a transparent gold sparkle animation */
+  background-size: cover;
+  opacity: 0.5;
+  animation: sparkleMove 6s linear infinite;
+}
+
+@keyframes sparkleMove {
+  0% {
+    opacity: 0.4;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateX(10px);
+  }
+}
+
+/* Animated Counter for Prize Money */
+.counter {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+}
+
+/* Fireworks Animation */
+#fireworks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Text Fix */
+.floating-text {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.5);
+  animation: floatText 5s infinite alternate ease-in-out;
+  white-space: nowrap;
+}
+
+@keyframes floatText {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 0.7;
+  }
+}
+
+/* Instagram Gallery (Static) */
+.instagram-gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.selfie-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.selfie-img:hover {
+  transform: scale(1.1);
+}
+
+/* Live Instagram Feed Section */
+.live-feed-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 80px 0;
+  border-radius: 15px;
+}
+
+/* Instagram Gallery with More Spacing */
+.instagram-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Selfie Image Styling (Larger & More Space) */
+.selfie-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Hover Effect */
+.selfie-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 25px rgba(255, 255, 255, 0.5);
+}
+
+/* Fade-In Animation for Smooth Load */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* How to Participate Section */
+.participate-section {
+  background: linear-gradient(135deg, #8b0000 10%, #ff0000 90%);
+  padding: 100px 0;
+}
+
+/* Step Cards */
+.step-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover Effect */
+.step-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Icons */
+.step-card i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffd700;
+}
+
+/* Step Card Titles */
+.step-card h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Call-to-Action Button */
+.participate-btn {
+  background-color: #ffd700;
+  color: #8b0000;
+  padding: 16px 40px;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Button Hover Effect */
+.participate-btn:hover {
+  background-color: #ffcc00;
+  color: #660000;
+  transform: scale(1.1);
+  box-shadow: 0px 12px 40px rgba(255, 215, 0, 0.8);
+}
+
+/* Smooth Fade-In Effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveStreaks {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(10%);
+    opacity: 0.4;
+  }
+}
+
+/* Steps Container */
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Step Cards */
+.step-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  width: 230px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 1s ease-in-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.step-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.4);
+}
+
+/* Step Numbers (Big, Bold & Animated) */
+.step-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffd700;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 50%;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+  animation: stepGlow 2s infinite alternate ease-in-out;
+}
+
+/* Step Number Animation */
+@keyframes stepGlow {
+  0% {
+    text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    text-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
+  }
+}
+
+/* Floating Icons Effect */
+.floating-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ffd700;
+  transition: transform 0.3s ease-in-out;
+}
+
+.step-card:hover .floating-icon {
+  transform: rotateY(20deg) rotateX(10deg);
+}
+
+/* Call-to-Action Button */
+.participate-btn {
+  background-color: #ffd700;
+  color: #8b0000;
+  padding: 18px 45px;
+  font-size: 1.4rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.5);
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+/* Button Hover Effect */
+.participate-btn:hover {
+  background-color: #ffcc00;
+  color: #660000;
+  transform: scale(1.1);
+  box-shadow: 0px 12px 40px rgba(255, 215, 0, 0.8);
+}
+
+/* Button Glow Effect */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0px 6px 20px rgba(255, 215, 0, 0.5);
+  }
+  100% {
+    box-shadow: 0px 12px 40px rgba(255, 215, 0, 1);
+  }
+}
+
+/* Smooth Fade-In Effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  background: linear-gradient(135deg, #8b0000 10%, #ff0000 90%);
+  padding: 100px 0;
+}
+
+/* Accordion Styling */
+.accordion-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+/* FAQ Buttons */
+.accordion-button {
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+}
+
+.accordion-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+/* FAQ Collapse Animation */
+.accordion-body {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 15px;
+  border-radius: 0 0 10px 10px;
+  text-align: left;
+}
+
+/* Fade-in Effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-item {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
