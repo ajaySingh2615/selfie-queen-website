@@ -1,154 +1,82 @@
-// Create Floating Red Particles
-const particlesContainer = document.querySelector(".particles");
+// Smooth Scroll Function
+// document.querySelectorAll(".btn").forEach((button) => {
+//   button.addEventListener("click", function (e) {
+//     e.preventDefault();
+//     const target = document.querySelector(this.getAttribute("href"));
+//     if (target) {
+//       target.scrollIntoView({ behavior: "smooth" });
+//     }
+//   });
+// });
 
-function createParticle() {
-  const particle = document.createElement("div");
-  particle.classList.add("particle");
-  particlesContainer.appendChild(particle);
+// Countdown Timer (To Be Used Later)
+// function startCountdown(deadline) {
+//   let countdownElement = document.getElementById("countdown");
+//   function updateCountdown() {
+//     let now = new Date().getTime();
+//     let timeLeft = deadline - now;
 
-  // Random Position
-  const size = Math.random() * 10 + 5;
-  particle.style.width = `${size}px`;
-  particle.style.height = `${size}px`;
-  particle.style.left = `${Math.random() * 100}vw`;
-  particle.style.top = `${Math.random() * 100}vh`;
+//     let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+//     let hours = Math.floor(
+//       (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+//     );
+//     let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+//     let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  // Animation
-  particle.style.animation = `floatUp ${
-    Math.random() * 5 + 5
-  }s linear infinite`;
-  setTimeout(() => particle.remove(), 5000);
-}
+//     countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-// Generate Particles
-setInterval(createParticle, 300);
+//     if (timeLeft < 0) {
+//       countdownElement.innerHTML = "⏳ Submission Closed!";
+//     }
+//   }
+//   setInterval(updateCountdown, 1000);
+// }
 
-// CSS for Particles
-const particleStyles = document.createElement("style");
-particleStyles.innerHTML = `
-    .particle {
-        position: absolute;
-        background: rgba(255, 0, 0, 0.8);
-        border-radius: 50%;
-        opacity: 0.8;
-        filter: blur(2px);
-    }
-    
-    @keyframes floatUp {
-        from { transform: translateY(0) scale(1); opacity: 1; }
-        to { transform: translateY(-50px) scale(0.8); opacity: 0; }
-    }
-`;
-document.head.appendChild(particleStyles);
+// Call the function with the deadline (replace with actual deadline)
+// startCountdown(new Date("2025-03-01 23:59:59").getTime());
 
-// Animate Prize Money Counter
-const counters = document.querySelectorAll(".counter");
-counters.forEach((counter) => {
-  counter.innerText = "0";
-  const updateCounter = () => {
-    const target = +counter.getAttribute("data-target");
-    const count = +counter.innerText;
-    const increment = target / 100;
+// Parallax Scroll Effect for Hero Title
+// window.addEventListener("scroll", function () {
+//   let heroTitle = document.querySelector(".hero-title");
+//   let scrollPosition = window.scrollY;
 
-    if (count < target) {
-      counter.innerText = Math.ceil(count + increment);
-      setTimeout(updateCounter, 20);
-    } else {
-      counter.innerText = target;
-    }
-  };
-  updateCounter();
-});
+//   if (scrollPosition > 10) {
+//     heroTitle.classList.add("window-scroll");
+//   } else {
+//     heroTitle.classList.remove("window-scroll");
+//   }
+// });
 
-// 3D Tilt Effect on Hover
-VanillaTilt.init(document.querySelectorAll(".prize-card"), {
-  max: 15,
-  speed: 400,
-  glare: true,
-  "max-glare": 0.2,
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-item");
 
-// Fireworks Effect
-const canvas = document.getElementById("fireworks");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question");
+    const icon = item.querySelector(".faq-toggle-icon i");
 
-function createFirework() {
-  let x = Math.random() * canvas.width;
-  let y = (Math.random() * canvas.height) / 2;
-  ctx.beginPath();
-  ctx.arc(x, y, 3, 0, Math.PI * 2);
-  ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  ctx.fill();
-}
+    question.addEventListener("click", () => {
+      // Close all FAQs first
+      faqItems.forEach((faq) => {
+        if (faq !== item) {
+          faq.classList.remove("active");
+          faq.querySelector(".faq-answer").style.display = "none";
+          faq
+            .querySelector(".faq-toggle-icon i")
+            .classList.replace("fa-minus", "fa-plus");
+        }
+      });
 
-setInterval(createFirework, 500);
-
-// Play Announcement Voice ONLY When Section Becomes Visible
-let sectionVisible = false;
-const prizesSection = document.querySelector(".prizes-section");
-
-const playAnnouncement = () => {
-  if (!sectionVisible) {
-    let speech = new SpeechSynthesisUtterance(
-      "Welcome to Miss Selfie Queen 2025! Here are the grand prizes!"
-    );
-    speechSynthesis.speak(speech);
-    sectionVisible = true;
-  }
-};
-
-// Check if section is visible
-const observer2 = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        playAnnouncement();
+      // Toggle current FAQ
+      const answer = item.querySelector(".faq-answer");
+      if (item.classList.contains("active")) {
+        item.classList.remove("active");
+        answer.style.display = "none";
+        icon.classList.replace("fa-minus", "fa-plus");
+      } else {
+        item.classList.add("active");
+        answer.style.display = "block";
+        icon.classList.replace("fa-plus", "fa-minus");
       }
     });
-  },
-  { threshold: 0.5 }
-);
-
-observer.observe2(prizesSection);
-
-// Step Cards Fade-in on Scroll
-const stepCards = document.querySelectorAll(".step-card");
-const observer3 = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = "fadeInUp 1s ease-in-out forwards";
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
-
-stepCards.forEach((card) => observer.observe3(card));
-
-// FAQ Items Fade-in on Scroll
-const faqItems = document.querySelectorAll(".accordion-item");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = "fadeInUp 0.8s ease-in-out forwards";
-      }
-    });
-  },
-  { threshold: 0.3 }
-);
-
-faqItems.forEach((item) => observer.observe(item));
-
-// Voice Assistant for FAQ Answers
-const faqButtons = document.querySelectorAll(".accordion-button");
-faqButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    let text = button.innerText;
-    let speech = new SpeechSynthesisUtterance(text);
-    speechSynthesis.speak(speech);
   });
 });
