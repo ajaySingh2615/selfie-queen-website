@@ -11,7 +11,14 @@ body {
 .hero-section {
   position: relative;
   height: 100vh;
-  background: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(139, 0, 0, 1));
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
   color: white;
   display: flex;
   align-items: center;
@@ -20,7 +27,7 @@ body {
   overflow: hidden;
 }
 
-/* Dark Overlay to Increase Text Visibility */
+/* Glowing Overlay for Depth */
 .hero-section::before {
   content: "";
   position: absolute;
@@ -28,18 +35,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.3)
+  );
   z-index: 1;
 }
 
-/* Hero Content */
+/* Hero Title */
 .hero-title {
   font-size: 4.5rem;
   font-weight: 900;
   text-transform: uppercase;
   color: white;
-  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
-  animation: bounceIn 1.5s ease-in-out;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.5s ease-in-out;
   position: relative;
   z-index: 2;
 }
@@ -47,7 +58,7 @@ body {
 /* Highlighted Text */
 .highlight {
   color: #ffd700;
-  text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.9);
+  text-shadow: 0px 0px 20px rgba(255, 215, 0, 1);
 }
 
 /* Hero Subtitle */
@@ -112,48 +123,50 @@ body {
   transform: scale(1.08);
 }
 
-/* Floating Elements */
-.floating-elements img {
+/* Floating Icons */
+.floating-elements i {
   position: absolute;
-  width: 70px;
-  opacity: 0.7;
+  font-size: 3rem;
+  opacity: 0.6;
+  color: white;
   animation: floatUp 5s infinite alternate ease-in-out;
-  filter: blur(3px);
 }
 
-.crown {
+/* Floating Icons Placement */
+.floating-elements i:nth-child(1) {
   top: 10%;
-  left: 10%;
+  left: 15%;
   animation-delay: 1s;
 }
-.heart {
-  top: 20%;
-  right: 15%;
+.floating-elements i:nth-child(2) {
+  top: 30%;
+  right: 20%;
   animation-delay: 2s;
 }
-.camera {
-  bottom: 15%;
-  left: 20%;
+.floating-elements i:nth-child(3) {
+  bottom: 20%;
+  left: 10%;
   animation-delay: 3s;
 }
-.star {
-  bottom: 10%;
-  right: 10%;
+.floating-elements i:nth-child(4) {
+  bottom: 15%;
+  right: 25%;
   animation-delay: 4s;
 }
 
-/* Keyframes */
-@keyframes bounceIn {
+/* Floating Icons Animation */
+@keyframes floatUp {
   0% {
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(0);
+    opacity: 0.5;
   }
   100% {
+    transform: translateY(-20px);
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
+/* Keyframes */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -185,18 +198,7 @@ body {
   }
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateY(-20px);
-    opacity: 1;
-  }
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3.5rem;

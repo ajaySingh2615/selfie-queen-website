@@ -27,6 +27,16 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        const menuIcon = document.querySelector(".menu-icon i");
+
+        navLinks.classList.toggle("active");
+        menuIcon.classList.toggle("fa-times"); // Changes to "X" icon when opened
+      }
+    </script>
+
     <!-- Hero Section -->
     <header class="hero-section">
       <div class="container">
