@@ -7,6 +7,123 @@ body {
   padding: 0;
 }
 
+/* Navigation Bar */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  /* padding: 15px 0; */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  /* padding-top: 10px; */
+  margin-top: 10px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      45deg,
+      #feda75,
+      #fa7e1e,
+      #d62976,
+      #962fbf,
+      #4f5bd5
+    );
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Prevent unwanted horizontal scrolling */
+body {
+  overflow-x: hidden;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -20,6 +137,7 @@ body {
     #4f5bd5
   );
   color: white;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -234,7 +352,26 @@ body {
   }
 }
 
-/* Prizes Section */
+@media (max-width: 400px) {
+  .hero-section {
+    padding-top: 130px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .highlight {
+    font-size: 1.6rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
 /* Prizes Section */
 .prizes-section {
   /* background: #fff; */

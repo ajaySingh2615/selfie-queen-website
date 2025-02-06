@@ -27,14 +27,28 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <script>
-      function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        const menuIcon = document.querySelector(".menu-icon i");
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Sortout Innovation</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
 
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
-        menuIcon.classList.toggle("fa-times"); // Changes to "X" icon when opened
-      }
+      });
     </script>
 
     <!-- Hero Section -->
@@ -46,7 +60,7 @@
             <h1 class="hero-title">
               🤳 <span class="highlight">Selfie Superstar</span> Contest! 🎉
             </h1>
-            <p class="hero-subtitle">Snap, Shine & Win Big! 💖👑</p>
+            <p class="hero-subtitle">Snap, Shine & Win Big!</p>
 
             <!-- Prize Highlights -->
             <div class="hero-prizes">
@@ -68,12 +82,6 @@
       </div>
 
       <!-- Floating Elements -->
-      <div class="floating-elements">
-        <img src="crown.png" class="float-icon crown" />
-        <img src="heart.png" class="float-icon heart" />
-        <img src="camera.png" class="float-icon camera" />
-        <img src="star.png" class="float-icon star" />
-      </div>
     </header>
 
     <!-- Countdown Timer Section -->
