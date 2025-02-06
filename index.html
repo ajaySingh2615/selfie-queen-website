@@ -23,6 +23,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -35,6 +38,9 @@
           <li><a href="#explore-prizes">Explore Prizes</a></li>
           <li><a href="#how-to-participate">How to Participate</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#submit-section" class="nav-btn">Submit Your Selfie</a>
+          </li>
         </ul>
         <div class="menu-toggle">
           <i class="fas fa-bars"></i>
@@ -52,37 +58,164 @@
     </script>
 
     <!-- Hero Section -->
-    <header class="hero-section">
-      <div class="container">
-        <div class="row align-items-center text-center">
-          <!-- Hero Content -->
-          <div class="col-lg-12">
-            <h1 class="hero-title">
-              🤳 <span class="highlight">Selfie Superstar</span> Contest! 🎉
-            </h1>
-            <p class="hero-subtitle">Snap, Shine & Win Big!</p>
+    <body>
+      <!-- Hero Section (Fixed Initially) -->
+      <header class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">👑 Miss Selfie Queen 2025</h1>
+            <p class="hero-subtitle">
+              Registration starts from <strong>15 Feb 2025</strong>
+            </p>
+            <img
+              src="hero-image.png"
+              class="hero-img"
+              alt="Miss Selfie Queen"
+            />
+          </div>
 
-            <!-- Prize Highlights -->
-            <div class="hero-prizes">
-              <div class="prize-card">🏆 <span>₹50,000 + iPhone 15</span></div>
-              <div class="prize-card">
-                🎁 <span>₹30,000 + OnePlus Nord</span>
-              </div>
-              <div class="prize-card">
-                📸 <span>₹20,000 + Samsung F55</span>
-              </div>
+          <!-- Prize Reveal Section (Inside Hero) -->
+          <div class="prize-container">
+            <div class="prize-item" id="prize1">
+              <h2>🏆 ₹50,000 + iPhone 15</h2>
+              <img src="1st-prize.png" alt="1st Prize" />
             </div>
 
-            <!-- Call-to-Action Button -->
-            <a href="YOUR_GOOGLE_FORM_LINK" class="btn hero-btn"
-              >🚀 Enter Now</a
-            >
+            <div class="prize-item" id="prize2">
+              <h2>🎁 ₹30,000 + OnePlus Nord</h2>
+              <img src="2nd-prize.png" alt="2nd Prize" />
+            </div>
+
+            <div class="prize-item" id="prize3">
+              <h2>📸 ₹20,000 + Samsung F55</h2>
+              <img src="3rd-prize.png" alt="3rd Prize" />
+            </div>
           </div>
         </div>
-      </div>
+      </header>
 
-      <!-- Floating Elements -->
-    </header>
+      <!-- Other Sections (Will be revealed after hero animations) -->
+      <section class="other-sections">
+        <h2>Next Section Content</h2>
+        <p>Now the user can scroll freely.</p>
+      </section>
+
+      <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        let currentScrolls = 0;
+        const maxScrolls = 3; // 3 Scrolls to reveal all prizes
+        const body = document.querySelector("body");
+        const heroSection = document.querySelector(".hero-section");
+        const otherSections = document.querySelector(".other-sections");
+
+        document.addEventListener("wheel", function (event) {
+          if (currentScrolls < maxScrolls) {
+            event.preventDefault(); // Stop default scrolling
+
+            let prizeId = `#prize${currentScrolls + 1}`;
+            gsap.to(prizeId, { opacity: 1, scale: 1, duration: 1 });
+
+            currentScrolls++;
+
+            if (currentScrolls === maxScrolls) {
+              // After all prizes are revealed, unlock scrolling
+              setTimeout(() => {
+                heroSection.style.position = "relative"; // Allow scrolling
+                otherSections.style.display = "block";
+                body.style.overflow = "auto"; // Enable scrolling
+              }, 1000);
+            }
+          }
+        });
+      </script>
+
+      <script src="script.js"></script>
+    </body>
+
+    <!-- Scroll-Based Prize Reveal Section (Pinned) -->
+    <section class="prize-section">
+      <div class="prize-container">
+        <div class="prize-item" id="prize1">
+          <h2>🏆 ₹50,000 + iPhone 15</h2>
+          <img src="1st-prize.png" alt="1st Prize" />
+        </div>
+
+        <div class="prize-item" id="prize2">
+          <h2>🎁 ₹30,000 + OnePlus Nord</h2>
+          <img src="2nd-prize.png" alt="2nd Prize" />
+        </div>
+
+        <div class="prize-item" id="prize3">
+          <h2>📸 ₹20,000 + Samsung F55</h2>
+          <img src="3rd-prize.png" alt="3rd Prize" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // ScrollTrigger for Prizes
+      gsap.from("#prize1", {
+        scrollTrigger: {
+          trigger: "#prize1",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.5,
+      });
+
+      gsap.from("#prize2", {
+        scrollTrigger: {
+          trigger: "#prize2",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.5,
+      });
+
+      gsap.from("#prize3", {
+        scrollTrigger: {
+          trigger: "#prize3",
+          start: "top 80%",
+          end: "top 50%",
+          scrub: 1,
+        },
+        opacity: 0,
+        scale: 0.5,
+        duration: 1.5,
+      });
+    </script>
+
+    <!-- Scroll-Based Prize Reveal Section -->
+    <section class="prize-section">
+      <div class="container">
+        <!-- 1st Prize -->
+        <div class="prize-item" id="prize1">
+          <img src="/images/1a.jpg" alt="1st Prize" />
+          <h2>🏆 1st Prize: ₹50,000 + iPhone 15</h2>
+        </div>
+
+        <!-- 2nd Prize -->
+        <div class="prize-item" id="prize2">
+          <img src="/images/2a.jpg" alt="2nd Prize" />
+          <h2>🎁 2nd Prize: ₹30,000 + OnePlus Nord</h2>
+        </div>
+
+        <!-- 3rd Prize -->
+        <div class="prize-item" id="prize3">
+          <img src="/images/1a.jpg" alt="3rd Prize" />
+          <h2>📸 3rd Prize: ₹20,000 + Samsung F55</h2>
+        </div>
+      </div>
+    </section>
 
     <!-- Countdown Timer Section -->
     <section id="countdown" class="countdown-section">
@@ -251,9 +384,36 @@
         </div>
 
         <!-- CTA Button -->
-        <a href="YOUR_GOOGLE_FORM_LINK" class="btn participate-btn"
-          >📸 Submit Your Selfie Now</a
+      </div>
+    </section>
+
+    <!-- Submit Your Selfie Section -->
+    <section id="submit-section" class="submit-section">
+      <div class="container">
+        <h2 class="section-title-submit">
+          📸 Submit Your Best Selfie & Win Big! 🎉
+        </h2>
+        <p class="section-subtitle-submit">
+          Fill out the form below and stand a chance to become the
+          <span class="highlight">Miss Selfie Queen 2025! 👑</span>
+        </p>
+
+        <!-- Google Form Embed -->
+
+        <!-- External Link for Users Who Prefer a New Tab -->
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+          target="_blank"
+          class="btn submit-btn"
+          >📝 Fill Out The Form</a
         >
+      </div>
+
+      <!-- Floating Elements -->
+      <div class="floating-icons">
+        <i class="fa-solid fa-camera float-icon"></i>
+        <i class="fa-solid fa-heart float-icon"></i>
+        <i class="fa-solid fa-star float-icon"></i>
       </div>
     </section>
 
