@@ -1,20 +1,700 @@
+/* Global Styles */
 body {
-  background-color: #fff;
-  color: #dc3545;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b2f, #161625);
+  color: white;
+  overflow-x: hidden;
 }
-.register-section {
+
+/* Hero Section */
+.hero-section {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  padding: 80px 0;
+  background: url("/v3/images/bg-gradient.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/* HERO IMAGE */
+.hero-img img {
+  max-width: 85%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* HERO CONTENT */
+.hero-content {
+  max-width: 550px;
+  text-align: left;
+}
+
+/* HERO TITLE */
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.highlight {
+  color: #ff3b6f;
+}
+
+/* SUBTITLE */
+.subheading {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ff9aa2;
+  margin-bottom: 20px;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+  font-family: "Montserrat", sans-serif;
+  background: #ff3b6f;
+  color: white;
+  font-weight: bold;
+  padding: 14px 40px;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 15px rgba(255, 59, 111, 0.4);
+}
+
+.register-btn:hover {
+  background: transparent;
+  border: 2px solid #ff3b6f;
+  color: #ff3b6f;
+  transform: scale(1.08);
+  box-shadow: 0px 0px 25px rgba(255, 59, 111, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-img img {
+    max-width: 75%;
+  }
+}
+
+/* ABOUT SECTION */
+/* ABOUT SECTION */
+.about-section {
+  padding: 100px 0;
+}
+
+/* ABOUT CONTENT */
+.about-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+/* ABOUT TITLE */
+.about-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Pink Gradient Title Effect */
+.pink-highlight {
+  background: linear-gradient(45deg, #ff3b6f, #ff7b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 59, 111, 0.5);
+}
+
+/* ABOUT TEXT */
+.about-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #ff9aa2;
+  margin-bottom: 15px;
+}
+
+/* ABOUT IMAGE */
+.about-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(255, 59, 111, 0.4);
+  opacity: 1;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* SCROLL ANIMATIONS */
+
+/* Staggered Fade-In */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.scroll-fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from Left */
+.scroll-slide-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.scroll-slide-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from Right */
+.scroll-slide-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.scroll-slide-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Parallax Effect on Image */
+.parallax-img {
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+
+/* ✅ Fix for Mobile Layout */
+@media (max-width: 768px) {
+  .about-section {
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  /* 🛠 Image Moves Above Title */
+  .about-img {
+    order: -1; /* Forces image to be placed above the text */
+    margin-bottom: 20px; /* Adds spacing between image & title */
+  }
+
+  .about-img img {
+    max-width: 80%; /* Reduce image size for smaller screens */
+    display: block;
+    margin: 0 auto; /* Center the image */
+  }
+
+  .about-content {
+    max-width: 90%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* ✅ REGISTRATION SECTION */
+/* ✅ GLOBAL STYLES */
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b2f, #161625);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* ✅ REGISTRATION SECTION */
+.registration-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b2f, #161625);
+  color: white;
   text-align: center;
 }
+
+/* ✅ CENTERED MAIN HEADING */
+.registration-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* ✅ PINK GRADIENT TITLE */
+.pink-highlight {
+  background: linear-gradient(45deg, #ff3b6f, #ff7b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 59, 111, 0.5);
+}
+
+/* ✅ LEFT-SIDE REGISTRATION CONTENT */
+.registration-content {
+  text-align: left;
+  padding-right: 20px;
+}
+
+/* ✅ REGISTRATION TEXT */
+.registration-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff9aa2;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  background: rgba(255, 59, 111, 0.15);
+  padding: 18px;
+  border-left: 6px solid #ff3b6f;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+/* HOVER EFFECT */
+.registration-text:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.6);
+}
+
+/* ✅ ANIMATED HIGHLIGHT */
+.animated-highlight {
+  background: linear-gradient(45deg, #ff3b6f, #ff7b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGlow 1.5s infinite alternate;
+}
+
+/* GLOWING TEXT EFFECT */
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 59, 111, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 59, 111, 0.7);
+  }
+}
+
+/* ✅ GLASSMORPHIC REGISTRATION DETAILS BOX */
+.registration-details-box {
+  background: rgba(255, 59, 111, 0.08);
+  border: 1px solid rgba(255, 59, 111, 0.3);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* GLASS BOX HOVER EFFECT */
+.registration-details-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.4);
+}
+
+/* ✅ REGISTRATION DETAILS LIST */
+.registration-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.registration-details li {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* LIST ITEM HOVER */
+.registration-details li:hover {
+  transform: translateX(5px);
+}
+
+/* ✅ COUNTDOWN BOX - NEON EFFECT */
+.countdown-box {
+  background: rgba(255, 59, 111, 0.15);
+  border: 2px solid #ff3b6f;
+  padding: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.4);
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* COUNTDOWN BOX HOVER */
+.countdown-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.5);
+}
+
+/* ✅ COUNTDOWN TIMER */
+#countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff3b6f;
+  text-shadow: 0px 0px 15px rgba(255, 59, 111, 0.6);
+  animation: neonBlink 1.5s infinite alternate;
+}
+
+/* GLOWING COUNTDOWN */
+@keyframes neonBlink {
+  0% {
+    text-shadow: 0 0 15px rgba(255, 59, 111, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 30px rgba(255, 59, 111, 0.8);
+  }
+}
+
+/* ✅ RIGHT-SIDE IMAGE */
+.registration-img {
+  display: flex;
+  justify-content: center;
+}
+
+.registration-img img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(255, 59, 111, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ IMAGE HOVER EFFECT */
+.registration-img img:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ CENTERED REGISTER BUTTON */
+.register-button-container {
+  text-align: center;
+  margin-top: 60px; /* Adds spacing to ensure visibility */
+}
+
+/* ✅ REGISTER BUTTON - VISIBLE & BRIGHT */
 .register-btn {
-  background-color: #dc3545;
-  color: #fff;
-  padding: 10px 20px;
+  font-family: "Montserrat", sans-serif;
+  background: #ff3b6f;
+  color: white;
+  font-weight: bold;
+  padding: 18px 50px;
+  border-radius: 40px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  border: 3px solid rgba(255, 59, 111, 0.7);
+  box-shadow: 0px 0px 15px rgba(255, 59, 111, 0.5);
+  text-align: center;
+}
+
+/* ✅ HOVER EFFECT - BRIGHTER GLOW */
+.register-btn:hover {
+  background: white; /* Ensures visibility */
+  color: #ff3b6f; /* Matches brand colors */
+  transform: scale(1.08);
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.8);
+}
+
+/* ✅ RESPONSIVE FIXES */
+@media (max-width: 768px) {
+  .register-btn {
+    font-size: 1.4rem;
+    padding: 15px 40px;
+  }
+}
+
+/* ✅ FADE-UP ANIMATION FOR TITLE */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ SLIDE-UP ANIMATION FOR CONTENT */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ STAGGERED ENTRY FOR LIST ITEMS */
+.animate-stagger {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.animate-stagger:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animate-stagger:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.animate-stagger:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.animate-stagger:nth-child(4) {
+  transition-delay: 0.8s;
+}
+
+.animate-stagger.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ FADE-IN EFFECT FOR IMAGE */
+.animate-fade-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-fade-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ✅ FLOATING EFFECT FOR REGISTER BUTTON */
+.animate-float {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-float.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: floatEffect 2s infinite alternate ease-in-out;
+}
+
+/* FLOAT KEYFRAMES */
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ✅ PARTICIPATE SECTION */
+/* ✅ PARTICIPATE SECTION */
+.participate-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b2f, #161625);
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* ✅ CENTERED TITLE */
+.participate-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+/* PINK HIGHLIGHT */
+.pink-highlight {
+  background: linear-gradient(45deg, #ff3b6f, #ff7b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ✅ PARTICIPATE STEPS CONTAINER */
+.participate-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ✅ INDIVIDUAL STEP BOX */
+.participate-step {
+  background: rgba(255, 59, 111, 0.12);
+  border: 1px solid rgba(255, 59, 111, 0.3);
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.3);
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+}
+
+/* ✅ ICON FOR EACH STEP */
+.step-icon {
+  font-size: 3rem;
+  margin-right: 20px;
+  text-shadow: 0px 0px 15px rgba(255, 59, 111, 0.6);
+  animation: iconPulse 1.5s infinite alternate ease-in-out;
+}
+
+/* ICON PULSE EFFECT */
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+/* ✅ STEP CONTENT */
+.step-content h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.step-content p {
   font-size: 1.2rem;
-  border: none;
-  cursor: not-allowed;
+  color: #ff9aa2;
+  line-height: 1.6;
+}
+
+/* ✅ LINE CONNECTING STEPS */
+.step-line {
+  position: absolute;
+  width: 3px;
+  height: 50px;
+  background: linear-gradient(180deg, #ff3b6f, #ff7b8f);
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* REMOVE LINE FOR LAST STEP */
+.participate-step:last-child .step-line {
+  display: none;
+}
+
+/* ✅ HOVER EFFECT */
+.participate-step:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.5);
+}
+
+/* ✅ CENTERED CTA BUTTON */
+.participate-button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.participate-btn {
+  font-family: "Montserrat", sans-serif;
+  background: #ff3b6f;
+  color: white;
+  font-weight: bold;
+  padding: 16px 45px;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.4);
+}
+
+/* BUTTON HOVER EFFECT */
+.participate-btn:hover {
+  background: transparent;
+  border: 2px solid #ff3b6f;
+  color: #ff3b6f;
+  transform: scale(1.08);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.6);
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .participate-title {
+    font-size: 3rem;
+  }
+
+  .participate-step {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .participate-section {
+    padding: 80px 0;
+  }
+
+  .participate-title {
+    font-size: 2.8rem;
+  }
+
+  .participate-step {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-icon {
+    margin-bottom: 10px;
+  }
+
+  .participate-btn {
+    font-size: 1.3rem;
+    padding: 14px 35px;
+  }
 }
