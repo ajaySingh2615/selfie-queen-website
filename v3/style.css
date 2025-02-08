@@ -698,3 +698,222 @@ body {
     padding: 14px 35px;
   }
 }
+
+/* ✅ PRIZES SECTION */
+/* ✅ PRIZES SECTION */
+.prizes-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0c0c0c, #1b1b2f, #161625);
+  color: white;
+  text-align: center;
+}
+
+/* ✅ CENTERED TITLE */
+.prizes-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  color: white;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+/* PINK HIGHLIGHT */
+.pink-highlight {
+  background: linear-gradient(45deg, #ff3b6f, #ff7b8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ✅ PRIZE CARD CONTAINER */
+.prize-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  margin-bottom: 30px;
+  animation: floatUpDown 1s infinite alternate ease-in-out;
+}
+
+/* ✅ FLOATING KEYFRAMES */
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ✅ PRIZE INNER CONTAINER (FLIPS ON HOVER) */
+.prize-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* ✅ FLIP EFFECT ON HOVER */
+.prize-card:hover .prize-inner {
+  transform: rotateY(180deg);
+}
+
+/* ✅ FRONT & BACK OF CARD */
+.prize-front,
+.prize-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+  box-shadow: 0px 0px 25px rgba(255, 59, 111, 0.4);
+  backface-visibility: hidden; /* Hides the back when front is visible */
+}
+
+/* ✅ FRONT SIDE STYLING */
+.prize-front {
+  background: rgba(255, 59, 111, 0.15);
+  border: 2px solid #ff3b6f;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ BACK SIDE STYLING */
+.prize-back {
+  background: rgba(255, 59, 111, 0.25);
+  transform: rotateY(180deg); /* Initially flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ PRIZE ICON */
+.prize-icon {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0px 0px 15px rgba(255, 59, 111, 0.6);
+}
+
+/* ✅ PRIZE TITLE */
+.prize-front h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* ✅ PRIZE TEXT */
+.prize-front p {
+  font-size: 1.5rem;
+  color: #ff9aa2;
+  font-weight: 500;
+}
+
+/* ✅ BACK IMAGE */
+.prize-img {
+  max-width: 80%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.5);
+}
+
+/* ✅ PRIZE BUTTON */
+.prizes-button-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.prizes-btn {
+  font-family: "Montserrat", sans-serif;
+  background: #ff3b6f;
+  color: white;
+  font-weight: bold;
+  padding: 16px 45px;
+  border-radius: 40px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 20px rgba(255, 59, 111, 0.4);
+}
+
+/* ✅ BUTTON HOVER EFFECT */
+.prizes-btn:hover {
+  background: transparent;
+  border: 2px solid #ff3b6f;
+  color: #ff3b6f;
+  transform: scale(1.08);
+  box-shadow: 0px 0px 30px rgba(255, 59, 111, 0.6);
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .prizes-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .prizes-section {
+    padding: 80px 0;
+  }
+
+  .prizes-title {
+    font-size: 2.8rem;
+  }
+
+  .prizes-btn {
+    font-size: 1.3rem;
+    padding: 14px 35px;
+  }
+}
+
+/* ✅ FADE-UP ANIMATION FOR TITLE */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ SLIDE-UP ANIMATION FOR CARDS */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-slide-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ✅ FLOATING BUTTON EFFECT */
+.animate-float {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-in-out;
+}
+
+.animate-float.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: floatEffect 2s infinite alternate ease-in-out;
+}
+
+/* FLOAT KEYFRAMES */
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
