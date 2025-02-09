@@ -15,10 +15,51 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/v3/style.css" />
   </head>
   <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Miss <span>Selfie Queen</span></a>
+
+        <!-- Menu Button for Mobile -->
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <nav class="nav-links" id="nav-links">
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-to-participate">How to Participate</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#prizes">Prizes</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact" class="nav-btn">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="container">
@@ -43,7 +84,9 @@
               <p class="subheading">
                 Unleash your beauty. Shine with confidence.
               </p>
-              <a href="#register" class="register-btn">Register Now</a>
+              <a href="#register" class="register-btn"
+                >Enter the Contest Now!</a
+              >
             </div>
           </div>
         </div>
@@ -71,16 +114,16 @@
                 About <span class="pink-highlight">Miss Selfie Queen</span> 2025
               </h2>
               <p class="about-text scroll-slide-left">
-                Miss Selfie Queen 2025 is a **national-level contest** designed
-                to celebrate beauty, confidence, and self-expression. This
+                Miss Selfie Queen 2025 is a national-level contest designed to
+                celebrate beauty, confidence, and self-expression. This
                 competition gives participants a platform to showcase their
                 **charisma, style, and unique personality** through selfies.
               </p>
               <p class="about-text scroll-slide-left">
                 Whether you're a professional model or just love taking the
-                perfect selfie, this contest is your chance to **shine, gain
-                recognition, and win amazing prizes**. Join thousands of
-                participants across India and make your **selfie count!**
+                perfect selfie, this contest is your chance to shine, gain
+                recognition, and win amazing prizes. Join thousands of
+                participants across India and make your selfie count!
               </p>
             </div>
           </div>
@@ -88,73 +131,81 @@
       </div>
     </section>
 
-    <!-- Registration Section -->
-    <section class="registration-section">
+    <!-- Contest Prizes Section -->
+    <section class="prizes-section">
       <div class="container">
-        <!-- Centered Main Heading -->
-        <h2 class="registration-title animate-fade-up">
-          Register for
-          <span class="pink-highlight">Miss Selfie Queen 2025</span>
+        <!-- Centered Title -->
+        <h2 class="prizes-title animate-fade-up">
+          Exciting <span class="pink-highlight">Prizes & Rewards</span>
         </h2>
 
-        <div class="row align-items-center">
-          <!-- Left Side: Registration Details -->
-          <div class="col-lg-7 col-md-6">
-            <div class="registration-content">
-              <p class="registration-text animate-slide-up">
-                🌟
-                <span class="animated-highlight">Step into the Spotlight!</span>
-                Showcase your **confidence, beauty, and style** in India’s
-                biggest selfie contest.
-              </p>
-
-              <!-- Styled Registration Details Box -->
-              <div class="registration-details-box animate-slide-up">
-                <ul class="registration-details">
-                  <li class="animate-stagger">
-                    📅 <strong>Registrations Open:</strong>
-                    <span>February 15, 2025</span>
-                  </li>
-                  <li class="animate-stagger">
-                    ⏳ <strong>Last Date to Register:</strong>
-                    <span>March 10, 2025</span>
-                  </li>
-                  <li class="animate-stagger">
-                    📍 <strong>Who Can Participate?</strong>
-                    <span>Women (Ages 18-30) from anywhere in India</span>
-                  </li>
-                  <li class="animate-stagger">
-                    🔥 <strong>Bonus:</strong>
-                    <span>Early registrants get exclusive tips & updates!</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Styled Countdown Timer -->
-              <div class="countdown-box animate-slide-up">
-                <p class="countdown-text">⏳ **Registration Closes In:**</p>
-                <div id="countdown"></div>
+        <!-- Prizes Row -->
+        <div class="row">
+          <!-- First Place -->
+          <div class="col-lg-4 col-md-6">
+            <div class="prize-card">
+              <div class="prize-inner">
+                <!-- Front Side -->
+                <div class="prize-front">
+                  <div class="prize-icon">🥇</div>
+                  <h3>1st Place</h3>
+                  <p>🏆 ₹50,000 + iPhone</p>
+                </div>
+                <!-- Back Side -->
+                <div class="prize-back">
+                  <img
+                    src="/v3/images/iphone.webp"
+                    alt="iPhone"
+                    class="prize-img"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Right Side: Registration Image -->
-          <div class="col-lg-5 col-md-6">
-            <div class="registration-img animate-fade-in">
-              <img
-                src="/v3/images/registration_form_section.webp"
-                alt="Register for Miss Selfie Queen"
-                class="img-fluid"
-              />
+          <!-- Second Place -->
+          <div class="col-lg-4 col-md-6">
+            <div class="prize-card">
+              <div class="prize-inner">
+                <!-- Front Side -->
+                <div class="prize-front">
+                  <div class="prize-icon">🥈</div>
+                  <h3>2nd Place</h3>
+                  <p>🏆 ₹30,000 + Samsung</p>
+                </div>
+                <!-- Back Side -->
+                <div class="prize-back">
+                  <img
+                    src="/v3/images/samsung.webp"
+                    alt="Samsung"
+                    class="prize-img"
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Centered Register Button -->
-        <div class="register-button-container">
-          <a href="#register-form" class="register-btn animate-float"
-            >Register Now</a
-          >
+          <!-- Third Place -->
+          <div class="col-lg-4 col-md-6">
+            <div class="prize-card">
+              <div class="prize-inner">
+                <!-- Front Side -->
+                <div class="prize-front">
+                  <div class="prize-icon">🥉</div>
+                  <h3>3rd Place</h3>
+                  <p>🏆 ₹15,000 + OnePlus</p>
+                </div>
+                <!-- Back Side -->
+                <div class="prize-back">
+                  <img
+                    src="/v3/images/oneplus.webp"
+                    alt="OnePlus"
+                    class="prize-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -163,17 +214,17 @@
       // Function to Trigger Scroll Animations Repeatedly
       function scrollAnimations() {
         const elements = document.querySelectorAll(
-          ".animate-fade-up, .animate-slide-up, .animate-stagger, .animate-fade-in, .animate-float"
+          ".animate-fade-up, .animate-slide-up, .animate-float"
         );
 
         elements.forEach((element) => {
           const elementPosition = element.getBoundingClientRect().top;
-          const screenPosition = window.innerHeight / 1.3;
+          const screenPosition = window.innerHeight / 1.2;
 
           if (elementPosition < screenPosition) {
             element.classList.add("active");
           } else {
-            element.classList.remove("active");
+            element.classList.remove("active"); // Resets animation when scrolled out
           }
         });
       }
@@ -288,88 +339,72 @@
       document.addEventListener("DOMContentLoaded", scrollAnimations);
     </script>
 
-    <!-- Contest Prizes Section -->
-    <!-- Contest Prizes Section -->
-    <section class="prizes-section">
+    <!-- Registration Section -->
+    <section class="registration-section">
       <div class="container">
-        <!-- Centered Title -->
-        <h2 class="prizes-title animate-fade-up">
-          Exciting <span class="pink-highlight">Prizes & Rewards</span>
+        <!-- Centered Main Heading -->
+        <h2 class="registration-title animate-fade-up">
+          Register for
+          <span class="pink-highlight">Miss Selfie Queen 2025</span>
         </h2>
 
-        <!-- Prizes Row -->
-        <div class="row">
-          <!-- First Place -->
-          <div class="col-lg-4 col-md-6">
-            <div class="prize-card">
-              <div class="prize-inner">
-                <!-- Front Side -->
-                <div class="prize-front">
-                  <div class="prize-icon">🥇</div>
-                  <h3>1st Place</h3>
-                  <p>🏆 ₹50,000 + iPhone</p>
-                </div>
-                <!-- Back Side -->
-                <div class="prize-back">
-                  <img
-                    src="/v3/images/iphone.webp"
-                    alt="iPhone"
-                    class="prize-img"
-                  />
-                </div>
+        <div class="row align-items-center">
+          <!-- Left Side: Registration Details -->
+          <div class="col-lg-7 col-md-6">
+            <div class="registration-content">
+              <p class="registration-text animate-slide-up">
+                🌟
+                <span class="animated-highlight">Step into the Spotlight!</span>
+                Showcase your confidence, beauty, and style in India’s biggest
+                selfie contest.
+              </p>
+
+              <!-- Styled Registration Details Box -->
+              <div class="registration-details-box animate-slide-up">
+                <ul class="registration-details">
+                  <li class="animate-stagger">
+                    📅 <strong>Registrations Open:</strong>
+                    <span>February 15, 2025</span>
+                  </li>
+                  <li class="animate-stagger">
+                    ⏳ <strong>Last Date to Register:</strong>
+                    <span>March 10, 2025</span>
+                  </li>
+                  <li class="animate-stagger">
+                    📍 <strong>Who Can Participate?</strong>
+                    <span>Women (Ages 18-30) from anywhere in India</span>
+                  </li>
+                  <li class="animate-stagger">
+                    🔥 <strong>Bonus:</strong>
+                    <span>Early registrants get exclusive tips & updates!</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Styled Countdown Timer -->
+              <div class="countdown-box-timer animate-slide-up">
+                <p class="countdown-text">⏳ Registration Closes In:</p>
+                <div id="countdown"></div>
               </div>
             </div>
           </div>
 
-          <!-- Second Place -->
-          <div class="col-lg-4 col-md-6">
-            <div class="prize-card">
-              <div class="prize-inner">
-                <!-- Front Side -->
-                <div class="prize-front">
-                  <div class="prize-icon">🥈</div>
-                  <h3>2nd Place</h3>
-                  <p>🏆 ₹30,000 + Samsung</p>
-                </div>
-                <!-- Back Side -->
-                <div class="prize-back">
-                  <img
-                    src="/v3/images/samsung.webp"
-                    alt="Samsung"
-                    class="prize-img"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Third Place -->
-          <div class="col-lg-4 col-md-6">
-            <div class="prize-card">
-              <div class="prize-inner">
-                <!-- Front Side -->
-                <div class="prize-front">
-                  <div class="prize-icon">🥉</div>
-                  <h3>3rd Place</h3>
-                  <p>🏆 ₹15,000 + OnePlus</p>
-                </div>
-                <!-- Back Side -->
-                <div class="prize-back">
-                  <img
-                    src="/v3/images/oneplus.webp"
-                    alt="OnePlus"
-                    class="prize-img"
-                  />
-                </div>
-              </div>
+          <!-- Right Side: Registration Image -->
+          <div class="col-lg-5 col-md-6">
+            <div class="registration-img animate-fade-in">
+              <img
+                src="/v3/images/registration_form_section.webp"
+                alt="Register for Miss Selfie Queen"
+                class="img-fluid"
+              />
             </div>
           </div>
         </div>
 
-        <!-- Call-to-Action Button -->
-        <div class="prizes-button-container">
-          <a href="#register" class="prizes-btn animate-float"
-            >Join & Win Now</a
+        <!-- Centered Register Button -->
+        <div class="register-button-container">
+          <a href="#register-form" class="register-btn animate-float"
+            >Register Now</a
           >
         </div>
       </div>
@@ -379,17 +414,17 @@
       // Function to Trigger Scroll Animations Repeatedly
       function scrollAnimations() {
         const elements = document.querySelectorAll(
-          ".animate-fade-up, .animate-slide-up, .animate-float"
+          ".animate-fade-up, .animate-slide-up, .animate-stagger, .animate-fade-in, .animate-float"
         );
 
         elements.forEach((element) => {
           const elementPosition = element.getBoundingClientRect().top;
-          const screenPosition = window.innerHeight / 1.2;
+          const screenPosition = window.innerHeight / 1.3;
 
           if (elementPosition < screenPosition) {
             element.classList.add("active");
           } else {
-            element.classList.remove("active"); // Resets animation when scrolled out
+            element.classList.remove("active");
           }
         });
       }
@@ -400,6 +435,344 @@
       // Run Function Once on Page Load (for elements already in view)
       document.addEventListener("DOMContentLoaded", scrollAnimations);
     </script>
+
+    <!-- Event Timeline Section -->
+    <section class="timeline-section">
+      <div class="container">
+        <!-- Centered Title -->
+        <h2 class="timeline-title animate-fade-up">
+          Event <span class="pink-highlight">Timeline</span>
+        </h2>
+
+        <!-- Timeline Container -->
+        <div class="timeline-container">
+          <!-- Step 1 -->
+          <div class="timeline-item left animate-slide-left">
+            <div class="timeline-circle">📅</div>
+            <div class="timeline-content">
+              <h3>Feb 15, 2025</h3>
+              <p>Registrations Open</p>
+              <span>Start your journey by submitting your best selfie.</span>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item right animate-slide-right">
+            <div class="timeline-circle">⏳</div>
+            <div class="timeline-content">
+              <h3>Mar 10, 2025</h3>
+              <p>Registrations Close</p>
+              <span>Last chance to join! Don’t miss your opportunity.</span>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item left animate-slide-left">
+            <div class="timeline-circle">📢</div>
+            <div class="timeline-content">
+              <h3>Mar 12, 2025</h3>
+              <p>Share Your Selfie</p>
+              <span
+                >Showcase your selfie on social media and gain support!</span
+              >
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item right animate-slide-right">
+            <div class="timeline-circle">❌</div>
+            <div class="timeline-content">
+              <h3>Mar 30, 2025</h3>
+              <p>Selfie Sharing Closed</p>
+              <span>Judging begins! No more entries will be accepted.</span>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-item left animate-slide-left">
+            <div class="timeline-circle">🏆</div>
+            <div class="timeline-content">
+              <h3>Apr 5, 2025</h3>
+              <p>Winners Announced</p>
+              <span
+                >Get ready! The winners of Miss Selfie Queen 2025 will be
+                revealed.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Function to Trigger Scroll Animations Repeatedly
+      function scrollAnimations() {
+        const elements = document.querySelectorAll(
+          ".animate-slide-left, .animate-slide-right, .timeline-circle"
+        );
+        const timelineLine = document.querySelector(
+          ".timeline-container::before"
+        );
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.classList.add("active");
+          } else {
+            element.classList.remove("active");
+          }
+        });
+
+        // Animate timeline line when scrolling
+        const timeline = document.querySelector(".timeline-container");
+        if (timeline.getBoundingClientRect().top < window.innerHeight / 1.2) {
+          timeline.classList.add("active");
+        } else {
+          timeline.classList.remove("active");
+        }
+      }
+
+      // Run Function on Scroll
+      window.addEventListener("scroll", scrollAnimations);
+
+      // Run Function Once on Page Load (for elements already in view)
+      document.addEventListener("DOMContentLoaded", scrollAnimations);
+    </script>
+
+    <!-- Timer Countdown Section -->
+    <section class="timer-section">
+      <div class="container">
+        <!-- Centered Title -->
+        <h2 class="timer-title animate-fade-up">
+          Time <span class="pink-highlight">Left to Register</span>
+        </h2>
+
+        <!-- Countdown Timer Box -->
+        <div class="countdown-box animate-glow">
+          <div class="countdown-time">
+            <div class="time-block">
+              <span id="days">00</span>
+              <p>Days</p>
+            </div>
+            <div class="time-block">
+              <span id="hours">00</span>
+              <p>Hours</p>
+            </div>
+            <div class="time-block">
+              <span id="minutes">00</span>
+              <p>Minutes</p>
+            </div>
+            <div class="time-block">
+              <span id="seconds">00</span>
+              <p>Seconds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Set the deadline date
+      const deadline = new Date("March 10, 2025 23:59:59").getTime();
+
+      // Update the countdown every second
+      const countdownFunction = setInterval(function () {
+        const now = new Date().getTime();
+        const timeLeft = deadline - now;
+
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        // Flip animation only when numbers change
+        function updateNumber(id, value) {
+          let element = document.getElementById(id);
+          if (element.innerText != value) {
+            element.classList.remove("flip");
+            void element.offsetWidth; // Trigger reflow
+            element.classList.add("flip");
+            element.innerText = value;
+          }
+        }
+
+        // Update values with flip animation
+        updateNumber("days", days);
+        updateNumber("hours", hours);
+        updateNumber("minutes", minutes);
+        updateNumber("seconds", seconds);
+
+        // If countdown is over
+        if (timeLeft < 0) {
+          clearInterval(countdownFunction);
+          document.querySelector(".countdown-time").innerHTML =
+            "<h3>Registration Closed!</h3>";
+        }
+      }, 1000);
+    </script>
+
+    <!-- Contact & FAQ Section -->
+    <section class="contact-faq-section">
+      <div class="container">
+        <!-- Section Title -->
+        <h2 class="section-title animate-fade-up">
+          Get in <span class="pink-highlight">Touch</span>
+        </h2>
+
+        <div class="contact-faq-wrapper">
+          <!-- Left Side: Contact Links -->
+          <div class="contact-links animate-slide-left">
+            <h3>Contact Us</h3>
+            <p>Have questions? Reach out to us directly!</p>
+
+            <ul class="contact-list">
+              <li>
+                <a href="tel:+919876543210" class="contact-item phone">
+                  <i class="fas fa-phone-alt"></i> +91 98765 43210
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/919876543210"
+                  target="_blank"
+                  class="contact-item whatsapp"
+                >
+                  <i class="fab fa-whatsapp"></i> WhatsApp Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@missselfiequeen.com"
+                  class="contact-item email"
+                >
+                  <i class="fas fa-envelope"></i> info@missselfiequeen.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Side: FAQ Section -->
+          <div class="faq-section animate-slide-right">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+              <button class="faq-question">
+                Who can participate? <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Anyone aged 18-30 from India can join.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                Is there any entry fee? <span>+</span>
+              </button>
+              <div class="faq-answer">
+                No, participation is completely free.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                How do I increase my chances of winning? <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Share your selfie on social media and gather engagement.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">
+                When will the winners be announced? <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Winners will be announced on April 5, 2025.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // FAQ Toggle Animation
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          button.classList.toggle("active");
+          const answer = button.nextElementSibling;
+          answer.style.display =
+            answer.style.display === "block" ? "none" : "block";
+        });
+      });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- Left: Quick Links -->
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#how-to-participate">How to Participate</a></li>
+              <li><a href="#timeline">Event Timeline</a></li>
+              <li><a href="#prizes">Prizes & Rewards</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Center: Social Media -->
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://facebook.com" target="_blank" class="social fb"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="https://instagram.com" target="_blank" class="social ig"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://twitter.com" target="_blank" class="social tw"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://youtube.com" target="_blank" class="social yt"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Right: Contact Info -->
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>
+                <a href="tel:+919876543210"
+                  ><i class="fas fa-phone-alt"></i> +91 98765 43210</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@missselfiequeen.com"
+                  ><i class="fas fa-envelope"></i> info@missselfiequeen.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 Miss Selfie Queen. All Rights Reserved.</p>
+          <p>
+            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FontAwesome Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
     <!-- Bootstrap & JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
